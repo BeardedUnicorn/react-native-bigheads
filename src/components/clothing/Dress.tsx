@@ -1,8 +1,7 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { useTheme } from 'themeContext'
 import { ClothingProps } from './types'
-import { Path } from 'react-native-svg'
-import { Polygon } from 'react-native-svg'
+import { Path, Polygon } from 'react-native-svg'
 
 export const Front = ({ color }: ClothingProps) => {
   const { colors, skin } = useTheme()

@@ -1,9 +1,8 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { useTheme } from 'themeContext'
 import { ClothingProps } from './types'
-import { Noop } from '../../utils/Noop'
-import { Polygon } from 'react-native-svg'
-import { Path, Line, G, Polyline, Circle } from 'react-native-svg'
+import { Noop } from 'utils/Noop'
+import { Path, Line, G, Polyline, Circle, Polygon } from 'react-native-svg'
 
 export const DressShirt = ({ color, graphic: Graphic = Noop }: ClothingProps) => {
   const { colors, skin } = useTheme()

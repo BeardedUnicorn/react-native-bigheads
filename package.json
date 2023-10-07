@@ -1,11 +1,11 @@
 {
-  "version": "1.1.0",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/felipecespedes/react-native-bigheads"
+    "url": "https://github.com/beardedunicorn/react-native-bigheads"
   },
   "keywords": [
     "bigheads",
@@ -13,14 +13,14 @@
     "native"
   ],
   "bugs": {
-    "url": "https://github.com/felipecespedes/react-native-bigheads/issues"
+    "url": "https://github.com/beardedunicorn/react-native-bigheads/issues"
   },
   "files": [
     "dist",
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -32,8 +32,8 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-native": ">=0.62"
+    "react": ">=18",
+    "react-native": ">=0.72"
   },
   "husky": {
     "hooks": {
@@ -46,8 +46,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-native-bigheads",
-  "author": "Felipe Céspedes",
+  "name": "@beardedunicorn/react-native-bigheads",
+  "author": "Mike Herold",
   "description": "Big Heads avatars for React Native",
   "module": "dist/react-native-bigheads.esm.js",
   "size-limit": [
@@ -62,17 +62,18 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
-    "@types/react": "^16.9.43",
-    "@types/react-native": "^0.63.0",
+    "@types/react": "^18.2.25",
+    "@types/react-native": "^0.72.3",
     "husky": "^4.2.5",
-    "react": "^16.13.1",
-    "react-native": "^0.62.2",
+    "react": "^18.2.0",
+    "react-native": "^0.72.5",
     "size-limit": "^4.6.0",
     "tsdx": "^0.14.0",
     "tslib": "^2.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "react-native-svg": "^12.1.0"
+    "caniuse-lite": "^1.0.30001546",
+    "react-native-svg": "^13.14.0"
   }
 }

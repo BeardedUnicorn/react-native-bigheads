@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
-import { Noop } from '../../utils/Noop'
+import { useTheme } from 'themeContext'
+import { Noop } from 'utils/Noop'
 import { Path, G } from 'react-native-svg'
 import { HatProps } from './types'
 import { ClothingProps } from '../clothing/types'
@@ -11,7 +11,7 @@ export const Front = ({ color }: ClothingProps & HatProps) => {
   const { base } = colors.clothing[color]
 
   return (
-    <G transform={{ scale: 1, origin: 'center' }}>
+    <G transform="translate(-50%, -50%) scale(1) translate(50%, 50%)">
       <Path
         d="M331 453C414.833 434 604.1 408.5 690.5 458.5C660.5 410.5 574.3 363.5 491.5 363.5C428.5 363.5 342.2 408.6 331 453Z"
         fill="black"

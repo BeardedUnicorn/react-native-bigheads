@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { colors } from './theme'
+import { colors } from 'theme'
 
 export const ThemeContext = React.createContext({
   colors,

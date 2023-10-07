@@ -1,13 +1,13 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
-import { Noop } from '../../utils/Noop'
+import { useTheme } from 'themeContext'
+import { Noop } from 'utils/Noop'
 import { Path, G } from 'react-native-svg'
 
 export const Front = () => {
   const { colors } = useTheme()
 
   return (
-    <G transform={{ scale: 1, origin: 'center' }}>
+    <G transform="translate(-50%, -50%) scale(1) translate(50%, 50%)">
       <Path
         d="M477.706 297.731C476.729 299.149 476.77 301.033 477.806 302.407C491.491 320.567 519.231 338.299 554.786 349.624C590.468 360.989 634.48 366.056 681.144 358.448C683.182 358.116 684.632 356.286 684.491 354.226L662.991 41.2259C662.874 39.5288 661.697 38.0911 660.056 37.642C658.416 37.1928 656.67 37.8304 655.706 39.2315L477.706 297.731Z"
         fill="#79D1FF"

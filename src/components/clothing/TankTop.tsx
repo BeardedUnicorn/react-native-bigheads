@@ -1,7 +1,7 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { useTheme } from 'themeContext'
 import { ClothingProps } from './types'
-import { Noop } from '../../utils/Noop'
+import { Noop } from 'utils/Noop'
 import { Path, Polygon, G } from 'react-native-svg'
 
 export const TankTop = ({ color, graphic: Graphic = Noop }: ClothingProps) => {

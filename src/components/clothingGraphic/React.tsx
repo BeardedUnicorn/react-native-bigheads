@@ -1,7 +1,6 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
-import { Path } from 'react-native-svg'
-import { Circle } from 'react-native-svg'
+import { useTheme } from 'themeContext'
+import { Path, Circle } from 'react-native-svg'
 
 export const ReactGraphic = () => {
   const { colors } = useTheme()

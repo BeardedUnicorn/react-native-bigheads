@@ -1,7 +1,7 @@
 import React from 'react'
-import { colors } from '../theme'
-import { useTheme } from '../themeContext'
-import { Noop } from '../utils/Noop'
+import { colors } from 'theme'
+import { useTheme } from 'themeContext'
+import { Noop } from 'utils/Noop'
 import { FacialHairProps } from './facialHair/types'
 import { HairProps } from './hair/types'
 import { ClothingProps } from './clothing/types'
@@ -56,7 +56,7 @@ interface BaseProps extends SvgProps {
   size: number
   containerStyles: ViewStyle
   containerProps: ViewProps
-  svgRef?: React.Ref<React.Component<SvgProps>>
+  svgRef?: React.Ref<Svg>
 }
 
 export const Base = ({

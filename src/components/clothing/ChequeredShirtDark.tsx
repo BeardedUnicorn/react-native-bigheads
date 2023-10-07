@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../themeContext'
+import { useTheme } from 'themeContext'
 import { ClothingProps } from './types'
 import { G, Path } from 'react-native-svg'
 
