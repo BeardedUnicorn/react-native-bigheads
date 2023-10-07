@@ -1,4 +1,4 @@
-import { colors } from 'theme'
+import { colors } from '../../theme'
 
 export interface ClothingProps {
   color: keyof typeof colors.clothing

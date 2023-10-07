@@ -1,16 +1,16 @@
 import React from 'react'
 
-import { colors } from 'theme'
-import { ThemeContext } from 'themeContext'
-import { Noop } from 'utils/Noop'
+import { colors } from '../theme'
+import { ThemeContext } from '../themeContext'
+import { Noop } from '../utils/Noop'
 
-import { Base } from 'components/Base'
+import { Base } from '../components/Base'
 
-import { NormalEyebrows } from 'components/eyebrows/Normal'
-import { LeftLoweredEyebrows } from 'components/eyebrows/LeftLoweredEyebrows'
+import { NormalEyebrows } from '../components/eyebrows/Normal'
+import { LeftLoweredEyebrows } from '../components/eyebrows/LeftLoweredEyebrows'
 
-import { Grin } from 'components/mouths/Grin'
-import { SadMouth } from 'components/mouths/Sad'
+import { Grin } from '../components/mouths/Grin'
+import { SadMouth } from '../components/mouths/Sad'
 import { Lips } from './mouths/Lips'
 import { SmileOpen } from './mouths/SmileOpen'
 
@@ -32,8 +32,8 @@ import * as Breasts from '../components/bodies/Breasts'
 import { MediumBeard } from './facialHair/MediumBeard'
 
 import { HappyEyes } from './eyes/HappyEyes'
-import { NormalEyes } from 'components/eyes/NormalEyes'
-import { LeftTwitchEyes } from 'components/eyes/LeftTwitchEyes'
+import { NormalEyes } from '../components/eyes/NormalEyes'
+import { LeftTwitchEyes } from '../components/eyes/LeftTwitchEyes'
 
 import { Shirt } from './clothing/Shirt'
 import { ContentEyes } from './eyes/ContentEyes'

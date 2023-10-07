@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { EyeProps } from './types'
 import { LeftLash, RightLash } from './Lashes'
 import { Path, Circle, G } from 'react-native-svg'

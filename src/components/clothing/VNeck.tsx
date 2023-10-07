@@ -1,7 +1,7 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { ClothingProps } from './types'
-import { Noop } from 'utils/Noop'
+import { Noop } from '../../utils/Noop'
 import { Path, G } from 'react-native-svg'
 
 export const VNeck = ({ color, graphic: Graphic = Noop }: ClothingProps) => {

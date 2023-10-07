@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { Circle, Path } from 'react-native-svg'
 
 export const TinyGlasses = () => {

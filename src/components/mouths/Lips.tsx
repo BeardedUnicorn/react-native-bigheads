@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { MouthProps } from './types'
 import { Path } from 'react-native-svg'
 

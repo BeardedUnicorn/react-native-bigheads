@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
-import { Noop } from 'utils/Noop'
+import { useTheme } from '../../themeContext'
+import { Noop } from '../../utils/Noop'
 import { Path } from 'react-native-svg'
 
 export const Front = Noop

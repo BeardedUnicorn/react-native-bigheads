@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { Circle } from 'react-native-svg'
 import { BgShapeProps } from './types'
 

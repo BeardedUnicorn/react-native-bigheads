@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from 'theme';
+import { colors } from '../theme';
 import * as LongHair from '../components/hair/LongHair';
 import * as BunHair from '../components/hair/BunHair';
 import * as ShortHair from '../components/hair/ShortHair';

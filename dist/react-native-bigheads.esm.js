@@ -1,15 +1,6 @@
-import React from 'react';
-import { colors as colors$1 } from 'theme';
-import { useTheme, ThemeContext } from 'themeContext';
-import { Noop } from 'utils/Noop';
-import { Base } from 'components/Base';
-import { NormalEyebrows } from 'components/eyebrows/Normal';
-import { LeftLoweredEyebrows } from 'components/eyebrows/LeftLoweredEyebrows';
-import { Grin } from 'components/mouths/Grin';
-import { SadMouth } from 'components/mouths/Sad';
-import { Path, Circle, Rect, G, Line, Polygon, Polyline, Mask } from 'react-native-svg';
-import { NormalEyes } from 'components/eyes/NormalEyes';
-import { LeftTwitchEyes } from 'components/eyes/LeftTwitchEyes';
+import React, { useContext } from 'react';
+import { Polygon, Path, Line, G, Polyline, Circle, Svg, Rect, Mask } from 'react-native-svg';
+import { View } from 'react-native';
 
 var colors = {
   skin: {
@@ -132,6 +123,24 @@ var theme = {
   colors: colors
 };
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -146,6 +155,417 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
+
+var ThemeContext = /*#__PURE__*/React.createContext({
+  colors: colors,
+  skin: colors.skin.light
+});
+var useTheme = function useTheme() {
+  return useContext(ThemeContext);
+};
+
+var Noop = function Noop() {
+  return React.createElement(React.Fragment, null);
+};
+
+var DressShirt = function DressShirt(_ref) {
+  var color = _ref.color,
+      _ref$graphic = _ref.graphic,
+      Graphic = _ref$graphic === void 0 ? Noop : _ref$graphic;
+
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors,
+      skin = _useTheme.skin;
+
+  var base = colors.clothing[color].base;
+  return React.createElement(React.Fragment, null, React.createElement(Polygon, {
+    points: "547.85 847.98 505.72 813.61 580.35 758.82 419.65 758.82 494.28 813.61 452.15 847.98 414.52 791.48 414.52 869.96 588.78 869.96 588.78 786.52 547.85 847.98",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M616.66,758.16l-42.73.1a119.49,119.49,0,0,1-1.43,13.48,63.7,63.7,0,0,1-1.74,6.34c-2.34,6.49-17.26,12-21.49,16.73a48.22,48.22,0,0,1-4.5,4.43c-25.17,18.2-65.17,19.2-89.48-.58a51.36,51.36,0,0,1-7.11-7.61c-4.23-5.56-16.4-11.59-18.1-18.94a60,60,0,0,1-1.08-6.59,63.55,63.55,0,0,1-.36-6.8s-45.21-.56-45.21-.56a13.28,13.28,0,0,0-13.28,13.27v284.69a13.28,13.28,0,0,0,13.28,13.27H622.36a13.27,13.27,0,0,0,13.27-13.27V778C635.63,765.82,629.75,758.16,616.66,758.16Z",
+    fill: colors.white
+  }), React.createElement(Path, {
+    d: "M612.84,758.16c63.54,0,88.52,43.39,78.9,272-18.74,6.7-55.91,4.59-55.91,4.59Z",
+    fill: colors.white
+  }), React.createElement(Polygon, {
+    points: "451.06 855.4 499.51 831.31 548.09 855.4 511.03 812.38 467.14 813.21 451.06 855.4",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M635.63,831.31s-22.79,84.54-19.31,234l33.21-31,3.58-137.58C647.49,824.5,635.63,831.31,635.63,831.31Z",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M389,758.16c-61.78,0-88.88,56.45-80.75,245.48,22.42,9.91,56.19,5.58,56.19,5.58Z",
+    fill: colors.white
+  }), React.createElement(Path, {
+    d: "M306.94,957.49q.26,20.46,1.21,43.48c15.27.73,43.69.88,57.11,0l4.18-42.81C358.67,956.9,323.66,956.49,306.94,957.49Z",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M370.12,831.31l-.5,177.69-13.35.9C353.3,860.85,370.12,831.31,370.12,831.31Z",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M612.84,758.16c67.42,0,78.45,56.28,78.9,133.78v138.22s-50,5.53-55.91,4.59l-.1-142.11",
+    fill: "none",
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M389,758.16c-25.73,0-43.52,8.12-55.71,22.44-19.45,22.87-24.63,61.54-25,108.27v123.77c12.06,3.32,61.36-3.64,61.36-3.64l.49-118.6",
+    fill: "none",
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M372.6,1011.24c-1.83,2.61-73.77,1.92-74.67,0s-2.19-37.5,0-41c1.8-2.88,72.11-2.27,74.67,0S374.43,1008.63,372.6,1011.24Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M383.43,1069.39H500c-109.19,0-100.91-231.14-129.89-231.14v217.87A13.28,13.28,0,0,0,383.43,1069.39Z",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M364.15,860.29c-.19-3.67-.11-7.35.06-11s.47-7.34.85-11c.2-1.83.41-3.67.65-5.51s.49-3.67.85-5.5a44.05,44.05,0,0,1,3.59-11,44.05,44.05,0,0,1,3.59,11c.36,1.83.62,3.67.85,5.5s.45,3.68.65,5.51q.58,5.52.86,11c.16,3.67.24,7.35,0,11Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M635.63,869.4v8c.26,34,.26,69,0,102.76,0,2.87,0,5.72,0,8.53v67.41a13.27,13.27,0,0,1-13.27,13.27H383.43a13.28,13.28,0,0,1-13.28-13.27V990.3c-.26-34.86-.26-69.86,0-105.3V860.29",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M697.42,970.24c2.22,2.26,1.59,38.39,0,41s-64,1.92-64.77,0-1.9-37.5,0-41c.27-.5,2.28-.89,5.45-1.18",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M678.92,968.3c3.8.3,15-1.18,15.42-.76",
+    fill: colors.white
+  }), React.createElement(Path, {
+    d: "M678.92,968.3a23.67,23.67,0,0,1,1.88-2.16,12.13,12.13,0,0,1,1.78-1.47,12.74,12.74,0,0,1,1.81-1c.61-.29,1.22-.54,1.83-.79a24.1,24.1,0,0,1,3.79-1.18,15.85,15.85,0,0,1,2-.31c.36,0,.73,0,1.17,0,.25,0,.46,0,.82,0,.12,0,.44,0,.71.07l.35,0,.49.11.25.06.2.06.57.21a6.45,6.45,0,0,1,2,1.37l4.2,4.29-8.65,8.48-4.12-4.37a5.73,5.73,0,0,0,1.91,1.32c.18.08.36.14.54.2l.17,0,.19.05a2.34,2.34,0,0,0,.38.09l.19,0h0c.1,0,.26,0,.22,0s-.07,0-.15,0l-.75,0c-.57,0-1.19,0-1.82,0a26.27,26.27,0,0,1-3.92-.53c-.67-.15-1.34-.3-2-.49a12.56,12.56,0,0,1-2-.72,10,10,0,0,1-2.08-1.32A8.19,8.19,0,0,1,678.92,968.3Z",
+    fill: colors.outline
+  }), React.createElement(Polygon, {
+    points: "592.51 763.64 517.84 818.45 559.98 852.83 619.4 763.59 592.51 763.64",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Path, {
+    d: "M629.63,869.4c-.19-4.18-.1-8.36.06-12.53s.47-8.36.86-12.53c.2-2.09.4-4.18.64-6.27s.49-4.18.86-6.27a54.83,54.83,0,0,1,3.58-12.53,54.37,54.37,0,0,1,3.59,12.53c.36,2.09.63,4.18.85,6.27s.45,4.18.65,6.27c.39,4.17.69,8.35.85,12.53s.26,8.35.06,12.53Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M383.43,758.26l233.23-.1",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Polygon, {
+    points: "529.39 835.55 507.04 813.21 484.7 835.55 495.68 846.53 485.96 953.16 506.7 969.33 528.12 953.16 518.41 846.53 529.39 835.55",
+    fill: colors.clothing.white.shadow
+  }), React.createElement(Line, {
+    x1: "500.04",
+    y1: "813.21",
+    x2: "500.04",
+    y2: "1069.39",
+    fill: "none",
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "6px"
+  }), React.createElement(Polygon, {
+    points: "500.04 813.21 522.39 828.55 500.04 850.9 477.7 828.55 500.04 813.21",
+    fill: base
+  }), React.createElement(Path, {
+    d: "M419.62,758.8s43.27,39.34,74.66,54.81C479,838.82,452.15,848,452.15,848l-59.43-89.23Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M580.38,758.8S541,800,505.72,813.61c10,20.28,42.13,34.37,42.13,34.37l59.43-89.23Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(G, {
+    transform: "translate(0 30)"
+  }, React.createElement(Graphic, null)), React.createElement(Polygon, {
+    points: "478.96 946.16 499.7 962.33 521.12 946.16 511.12 836.38 488.96 836.38 478.96 946.16",
+    fill: base
+  }), React.createElement(Polyline, {
+    points: "477.7 828.55 488.68 839.53 478.96 946.16 499.7 962.33 521.12 946.16 511.41 839.53 522.39 828.55",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "8px"
+  }), React.createElement(Path, {
+    d: "M638.1,969.06c7.51-.71,21.51-.89,34-.67",
+    fill: colors.white
+  }), React.createElement(Path, {
+    d: "M637.54,963.08a50.92,50.92,0,0,1,8.84-.47c2.9.07,5.78.3,8.66.65,1.43.18,2.87.37,4.3.61a43.36,43.36,0,0,1,4.29.85,27.53,27.53,0,0,1,8.5,3.67,30.13,30.13,0,0,1-8.52,3.5c-1.41.36-2.82.63-4.23.86s-2.81.47-4.21.69c-2.8.42-5.59.78-8.35,1s-5.52.5-8.16.54l-6,.1-1-11.13Z",
+    fill: colors.outline
+  }), React.createElement(Circle, {
+    cx: "515.77",
+    cy: "982.93",
+    r: "4.8",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M490.89,836.19c-.05-.06,0,0,0,0l.07.05a.88.88,0,0,1,.17.12l.38.29c.25.21.52.42.78.65.53.45,1.09.93,1.7,1.39s1.27.9,2,1.42a27.37,27.37,0,0,1,2.71,2.33,5.61,5.61,0,0,1-3.13,2.43,9.41,9.41,0,0,1-3.7.27,11,11,0,0,1-3.63-1,9.72,9.72,0,0,1-1.65-1,8.85,8.85,0,0,1-.77-.63c-.12-.11-.25-.23-.37-.36l-.2-.21-.25-.29Z",
+    fill: colors.outline
+  }));
+};
+
+var Base = function Base(_ref) {
+  var Eyes = _ref.eyes,
+      Eyebrows = _ref.eyebrows,
+      Mouth = _ref.mouth,
+      _ref$hair = _ref.hair,
+      hair = _ref$hair === void 0 ? {
+    Front: Noop,
+    Back: Noop
+  } : _ref$hair,
+      FacialHair = _ref.facialHair,
+      _ref$clothing = _ref.clothing,
+      clothing = _ref$clothing === void 0 ? {
+    Front: Noop,
+    Back: Noop
+  } : _ref$clothing,
+      Accessory = _ref.accessory,
+      Graphic = _ref.graphic,
+      _ref$hat = _ref.hat,
+      hat = _ref$hat === void 0 ? {
+    Front: Noop,
+    Back: Noop
+  } : _ref$hat,
+      body = _ref.body,
+      hairColor = _ref.hairColor,
+      clothingColor = _ref.clothingColor,
+      _ref$bgShape = _ref.bgShape,
+      bgShape = _ref$bgShape === void 0 ? {
+    Shape: Noop,
+    Mask: Noop
+  } : _ref$bgShape,
+      bgColor = _ref.bgColor,
+      lipColor = _ref.lipColor,
+      hatColor = _ref.hatColor,
+      showBackground = _ref.showBackground,
+      lashes = _ref.lashes,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 100 : _ref$size,
+      _ref$containerStyles = _ref.containerStyles,
+      containerStyles = _ref$containerStyles === void 0 ? {} : _ref$containerStyles,
+      _ref$containerProps = _ref.containerProps,
+      containerProps = _ref$containerProps === void 0 ? {} : _ref$containerProps,
+      svgRef = _ref.svgRef,
+      rest = _objectWithoutPropertiesLoose(_ref, ["eyes", "eyebrows", "mouth", "hair", "facialHair", "clothing", "accessory", "graphic", "hat", "body", "hairColor", "clothingColor", "bgShape", "bgColor", "lipColor", "hatColor", "showBackground", "lashes", "size", "containerStyles", "containerProps", "svgRef"]);
+
+  var _useTheme = useTheme(),
+      skin = _useTheme.skin;
+
+  var FrontHair = hair.Front,
+      BackHair = hair.Back,
+      hatScale = hair.hatScale;
+  var FrontHat = hat.Front,
+      BackHat = hat.Back;
+  var FrontBody = body.Front,
+      BackBody = body.Back,
+      hasBreasts = body.hasBreasts;
+  var ClothingFront = clothing.Front,
+      ClothingBack = clothing.Back,
+      _clothing$braStraps = clothing.braStraps,
+      braStraps = _clothing$braStraps === void 0 ? true : _clothing$braStraps;
+  var BgShape = bgShape.Shape,
+      BgMask = bgShape.Mask;
+  return React.createElement(View, Object.assign({
+    style: _extends({}, containerStyles, {
+      height: size,
+      width: size
+    })
+  }, containerProps), React.createElement(Svg, Object.assign({
+    ref: svgRef,
+    viewBox: "0 0 1000 990"
+  }, rest), showBackground && React.createElement(BgMask, {
+    id: "mask"
+  }), React.createElement(G, {
+    mask: "url(#mask)"
+  }, showBackground && React.createElement(BgShape, {
+    bgColor: bgColor
+  }), React.createElement(BackHat, {
+    color: hatColor,
+    scale: hatScale
+  }), React.createElement(BackHair, {
+    hairColor: hairColor,
+    hasHat: FrontHat !== Noop
+  }), React.createElement(Path, {
+    d: "M610,758.72c90.76,0,72,114.24,72.87,241.28H610Z",
+    fill: skin.base
+  }), React.createElement(Path, {
+    d: "M632.74,831.87,610,870l11.38,130h31.76C653.91,819.73,632.74,831.87,632.74,831.87Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M233.25,500c0-147.32,119.43-266.75,266.75-266.75S766.75,352.68,766.75,500A266.22,266.22,0,0,1,668.1,707.12q-8.21,6.68-16.94,12.69C591,758,515,758,446.39,751.89c-6.66-1-13.3-2.26-19.89-3.71-26.33-5.8-51.82-14.75-75.37-27.8Q342.4,715,334.2,708.76a199.59,199.59,0,0,1-15.8-13.38q-7.14-6.63-13.79-13.78A265.86,265.86,0,0,1,233.25,500Z",
+    fill: skin.base
+  }), React.createElement(Path, {
+    d: "M269.61,634.48c.7,1.2,1.39,2.4,2.11,3.58.43.72.88,1.42,1.33,2.14.66,1.07,1.32,2.14,2,3.19.48.76,1,1.5,1.46,2.24.66,1,1.32,2,2,3,.51.76,1,1.52,1.56,2.28.66,1,1.32,1.92,2,2.88.54.77,1.1,1.53,1.65,2.3s1.34,1.85,2,2.77,1.15,1.53,1.73,2.29,1.37,1.8,2.07,2.7,1.19,1.51,1.79,2.26,1.41,1.76,2.12,2.63,1.23,1.49,1.85,2.23,1.44,1.72,2.17,2.57,1.27,1.47,1.91,2.2l2.22,2.5c.65.73,1.31,1.44,2,2.16.86.94,1.73,1.87,2.6,2.79l1.21,1.28c1.29,1.34,2.59,2.68,3.91,4l.26.27c1.29,1.28,2.6,2.55,3.91,3.81l1.58,1.5c.95.89,1.9,1.78,2.86,2.66l1.16,1.06c1,.94,2.09,1.86,3.14,2.78q4.9,4.27,10,8.19,8.19,6.24,16.93,11.62c23.55,13,49,22,75.37,27.8,6.59,1.45,13.23,2.7,19.89,3.71,42.1,3.75,87,5.18,129.28-3.08C508.45,729,185.59,612.74,388.8,257.48h0c-2.72,1.25-5.4,2.54-8.06,3.88l-.59.29c-1.22.61-2.44,1.24-3.65,1.88l-1,.53c-3.76,2-7.48,4.07-11.13,6.23l-.9.53c-1.16.69-2.31,1.39-3.46,2.1l-.87.54q-5.36,3.35-10.55,6.93l-1.08.75c-1.09.76-2.16,1.52-3.23,2.29l-.66.47q-3.27,2.39-6.46,4.84l-.62.48c-1,.78-2,1.58-3,2.39l-1.17.94c-1,.81-2,1.62-3,2.45l0,0c-2.11,1.75-4.19,3.55-6.24,5.37l-1.14,1-2.69,2.45L318,305q-4.28,4-8.37,8.17l-1.38,1.41c-.79.82-1.58,1.64-2.36,2.47-.46.49-.92,1-1.37,1.48q-2.06,2.2-4.06,4.46c-.45.51-.91,1-1.36,1.54-.71.81-1.41,1.63-2.11,2.45l-1.51,1.79c-.68.81-1.36,1.62-2,2.44-.54.66-1.08,1.33-1.61,2-1.07,1.33-2.12,2.66-3.16,4-.54.7-1.08,1.4-1.61,2.11s-1.2,1.59-1.79,2.4-1.07,1.45-1.59,2.18-1.13,1.55-1.68,2.33q-1.42,2-2.8,4.05c-.5.73-1,1.48-1.49,2.22s-1.1,1.66-1.64,2.5l-1.49,2.31-1.68,2.71c-.43.69-.86,1.38-1.28,2.07-.89,1.46-1.75,2.93-2.61,4.4l-1.22,2.16c-.54.95-1.08,1.91-1.61,2.87-.4.73-.8,1.46-1.19,2.19-.64,1.19-1.27,2.39-1.9,3.59l-1.2,2.34c-.64,1.28-1.28,2.55-1.91,3.84-.33.69-.67,1.39-1,2.09-.52,1.09-1,2.19-1.53,3.29-.31.66-.61,1.32-.91,2q-1.11,2.47-2.17,5c-.22.52-.43,1.05-.65,1.57-.53,1.27-1.05,2.54-1.56,3.82-.27.67-.53,1.34-.79,2-.5,1.26-1,2.53-1.45,3.8-.21.55-.42,1.1-.62,1.65q-.94,2.63-1.85,5.26l-.56,1.7q-.66,2-1.29,4l-.6,1.91c-.47,1.54-.93,3.08-1.37,4.63-.1.33-.2.66-.29,1q-.78,2.76-1.5,5.54c-.16.59-.3,1.19-.45,1.78-.35,1.39-.69,2.78-1,4.18l-.42,1.75c-.43,1.9-.85,3.8-1.24,5.71l-.15.77q-.51,2.55-1,5.1c-.11.61-.21,1.21-.32,1.82-.26,1.49-.51,3-.74,4.5-.08.51-.17,1-.24,1.52-.3,1.95-.57,3.91-.83,5.88l-.15,1.3c-.2,1.59-.38,3.19-.55,4.79-.06.6-.13,1.2-.19,1.81-.16,1.68-.31,3.37-.45,5.06,0,.35-.06.69-.08,1q-.22,3-.39,6.05c0,.53,0,1.07-.07,1.6q-.1,2.36-.18,4.71c0,.59,0,1.18,0,1.77,0,2.05-.08,4.11-.08,6.17,0,0,0,.07,0,.1,0,2.22,0,4.42.08,6.62,0,.76.06,1.52.08,2.28.05,1.47.1,2.94.17,4.41,0,.89.11,1.77.16,2.66.08,1.33.15,2.66.25,4,.07,1,.16,1.89.24,2.83.11,1.26.21,2.52.34,3.77.09,1,.21,1.94.31,2.91.14,1.21.27,2.43.42,3.64.12,1,.26,2,.39,2.95.16,1.18.32,2.37.5,3.55.15,1,.31,2,.47,3,.18,1.16.37,2.33.57,3.49.18,1,.36,2,.55,3,.21,1.15.43,2.3.65,3.44s.41,2,.62,3c.24,1.14.48,2.27.74,3.4s.44,2,.68,2.93c.26,1.13.54,2.25.82,3.36s.49,1.95.74,2.91c.3,1.12.6,2.23.91,3.34.26,1,.53,1.92.81,2.87.32,1.11.65,2.21,1,3.31s.58,1.89.88,2.84.7,2.19,1.06,3.28.62,1.87.94,2.8c.38,1.09.76,2.18,1.15,3.27.33.91.65,1.83,1,2.74l1.24,3.27c.35.89.69,1.79,1,2.68.44,1.09.89,2.19,1.34,3.28.36.86.71,1.73,1.08,2.59.47,1.12,1,2.22,1.45,3.33.37.82.73,1.65,1.1,2.47.52,1.16,1.07,2.3,1.6,3.44l1.08,2.3c.61,1.26,1.24,2.5,1.87,3.75.32.63.62,1.27.95,1.9q2.88,5.61,6,11.07C268.88,633.26,269.25,633.87,269.61,634.48Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M233.25,500c0-147.32,119.43-266.75,266.75-266.75S766.75,352.68,766.75,500A266.22,266.22,0,0,1,668.1,707.12q-8.21,6.68-16.94,12.69C591,758,515,758,446.39,751.89c-6.66-1-13.3-2.26-19.89-3.71-26.33-5.8-51.82-14.75-75.37-27.8Q342.4,715,334.2,708.76a199.59,199.59,0,0,1-15.8-13.38q-7.14-6.63-13.79-13.78A265.86,265.86,0,0,1,233.25,500Z",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M386.12,758.72c-90.77,0-72,114.24-72.87,241.28h72.87Z",
+    fill: skin.base
+  }), React.createElement(Path, {
+    d: "M367.23,831.87,390,870l-11.39,130H346.88C346.07,819.73,367.23,831.87,367.23,831.87Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M619.47,1070H380.53a13.28,13.28,0,0,1-13.27-13.28V772a13.28,13.28,0,0,1,13.27-13.28H613.76c13.09,0,19,7.66,19,19.88v278.08A13.28,13.28,0,0,1,619.47,1070Z",
+    fill: skin.base
+  }), React.createElement(Path, {
+    d: "M629.05,766.62a19.33,19.33,0,0,1-2.51-4,17.25,17.25,0,0,0-8.28-3.51,28.88,28.88,0,0,0-4.5-.34H380.53A13.28,13.28,0,0,0,367.26,772c29,10.42,83.29,16.24,132.74,16.24C563.06,788.24,604.38,778.89,629.05,766.62Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M610,758.72c90.76,0,72,114.24,72.87,241.28H632.74",
+    fill: "none",
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M386.12,758.72c-90.77,0-72,114.24-72.87,241.28h50.07",
+    fill: "none",
+    stroke: colors.outline,
+    strokeLinecap: "square",
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M380.53,758.82l233.23-.1",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M380.53,1070H497.15C388,1070,396.24,838.82,367.26,838.82v217.86A13.28,13.28,0,0,0,380.53,1070Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M361.26,860.85c-.19-3.67-.11-7.34.05-11s.47-7.35.86-11c.2-1.84.4-3.67.65-5.51s.49-3.67.85-5.51a44.18,44.18,0,0,1,3.59-11,44.18,44.18,0,0,1,3.59,11c.36,1.84.62,3.67.85,5.51s.45,3.67.65,5.51c.38,3.67.68,7.34.85,11s.25,7.34.06,11Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M632.74,870v8c.26,34,.26,69,0,102.75,0,2.87,0,5.72,0,8.53v67.41A13.28,13.28,0,0,1,619.47,1070H380.53a13.28,13.28,0,0,1-13.27-13.28V998.52c0-2.51,0-5.07,0-7.65-.25-34.87-.25-69.87,0-105.3V860.85",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M626.74,870c-.19-4.17-.1-8.35.06-12.53s.47-8.35.85-12.53c.2-2.09.41-4.18.65-6.27s.49-4.17.85-6.26a55.09,55.09,0,0,1,3.59-12.53,55.09,55.09,0,0,1,3.59,12.53c.36,2.09.62,4.18.85,6.26s.45,4.18.65,6.27c.38,4.18.69,8.35.85,12.53s.25,8.36.06,12.53Z",
+    fill: colors.outline
+  }), React.createElement(BackBody, {
+    clothingColor: clothingColor,
+    braStraps: braStraps
+  }), React.createElement(ClothingBack, {
+    color: clothingColor,
+    graphic: Graphic,
+    hasBreasts: hasBreasts
+  }), !(ClothingFront === Noop && ClothingBack === Noop) && React.createElement(FrontBody, {
+    clothingColor: ClothingBack === DressShirt ? 'white' : clothingColor,
+    braStraps: braStraps
+  }), React.createElement(ClothingFront, {
+    color: clothingColor,
+    graphic: Graphic,
+    hasBreasts: hasBreasts
+  }), React.createElement(Eyebrows, null), React.createElement(Eyes, {
+    withLashes: lashes
+  }), React.createElement(FacialHair, {
+    color: hairColor
+  }), React.createElement(Mouth, {
+    lipColor: lipColor
+  }), React.createElement(FrontHair, {
+    hairColor: hairColor,
+    hasHat: FrontHat !== Noop
+  }), React.createElement(FrontHat, {
+    color: hatColor,
+    scale: hatScale
+  }), React.createElement(Accessory, null))));
+};
+
+var NormalEyebrows = function NormalEyebrows() {
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M600.89,460.57a318.14,318.14,0,0,1,33.51-6.65l-2.66.35c13.18-1.74,26.54-2.25,39.75-.48l-2.66-.36c3.27.46,6.54,1,9.82,1.42l-2.66-.36a221,221,0,0,1,29.48,6.11c5,1.39,11.1-1.73,12.3-7a10.19,10.19,0,0,0-7-12.3,239.21,239.21,0,0,0-34.59-6.78l2.66.36a143,143,0,0,0-33.44-1.95,235.08,235.08,0,0,0-33.09,4.55c-5.62,1.13-11.2,2.43-16.76,3.8-5.08,1.25-8.62,7.26-7,12.3a10.19,10.19,0,0,0,12.3,7Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M286.14,460.6a202.56,202.56,0,0,1,29.25-6.19l-2.66.36a195.53,195.53,0,0,1,51.38.08l-2.66-.35a218.94,218.94,0,0,1,29.45,6.1c5,1.4,11.1-1.73,12.3-7a10.19,10.19,0,0,0-7-12.3A227.26,227.26,0,0,0,352,433.6a208.27,208.27,0,0,0-71.22,7.71,10.39,10.39,0,0,0-6,4.6,10.2,10.2,0,0,0-1,7.7c1.65,5.11,6.91,8.54,12.3,7Z",
+    fill: colors.outline
+  }));
+};
+
+var LeftLoweredEyebrows = function LeftLoweredEyebrows() {
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M603.1,452.29a320.74,320.74,0,0,1,33.51-6.66L634,446a150.31,150.31,0,0,1,39.75-.48l-2.66-.36c3.28.45,6.54,1,9.82,1.41l-2.66-.35a222.52,222.52,0,0,1,29.48,6.1c5,1.4,11.11-1.72,12.3-7a10.19,10.19,0,0,0-7-12.3,239.34,239.34,0,0,0-34.58-6.78l2.65.36a142.93,142.93,0,0,0-33.43-1.95,236.67,236.67,0,0,0-33.1,4.54c-5.61,1.14-11.19,2.44-16.76,3.81-5.08,1.25-8.61,7.26-7,12.3a10.21,10.21,0,0,0,12.3,7Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M261.26,502.22l14.13-1.48,33.67-3.52L350,492.93l35.18-3.69c5.72-.59,11.44-1.17,17.16-1.79l.24,0c2.73-.28,5.07-.92,7.07-2.93a10,10,0,0,0,0-14.14c-1.83-1.69-4.48-3.2-7.07-2.93l-14.13,1.48-33.67,3.53-41,4.29-35.18,3.68c-5.72.6-11.44,1.18-17.16,1.8l-.24,0c-2.73.29-5.07.93-7.07,2.93a10,10,0,0,0,0,14.15c1.83,1.68,4.48,3.2,7.07,2.92Z",
+    fill: colors.outline
+  }));
+};
+
+var Grin = function Grin() {
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M463.75,593.17c15.55,0,25.12,12.76,36.49,12.76s25.91-12.76,41.27-12.76,23.72,11.12,23.72,26.52c0,16.65-16.75,46-62.6,46s-65.4-27.74-65.4-45.45C437.23,603.89,448.2,593.17,463.75,593.17Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Line, {
+    x1: "477.85",
+    y1: "596.6",
+    x2: "477.85",
+    y2: "662.1",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Line, {
+    x1: "526.99",
+    y1: "596.6",
+    x2: "526.99",
+    y2: "662.1",
+    fill: "none",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }));
+};
+
+var SadMouth = function SadMouth() {
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M538.71,665.74c-15.55,0-25.12-12.76-36.48-12.76S476.31,665.74,461,665.74s-23.73-11.11-23.73-26.51c0-16.65,16.75-46.06,62.61-46.06s65.39,27.74,65.39,45.46C565.23,655,554.27,665.74,538.71,665.74Z",
+    fill: colors.outline,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M511.14,655.25C506.58,643,491,635,473.29,636.57c-14.79,1.34-26.93,9.09-31.84,19.1,3.92,6.26,10.51,10.07,19.51,10.07,15.35,0,29.9-12.76,41.27-12.76A21.5,21.5,0,0,1,511.14,655.25Z",
+    fill: colors.tongue
+  }), React.createElement(Path, {
+    d: "M455.06,628.66l.87-.35.73-.25c.47-.16.94-.28,1.41-.4a21.33,21.33,0,0,1,2.85-.53,24.24,24.24,0,0,1,5.84-.07,21.24,21.24,0,0,1,11.15,4.48,20.07,20.07,0,0,1,6.55,9.27,17.31,17.31,0,0,1,.2,10.44c-2.5-2.58-4.46-4.94-6.43-6.88a27.89,27.89,0,0,0-2.88-2.58,13.78,13.78,0,0,0-3-1.72,15.18,15.18,0,0,0-6.35-1.15,29.08,29.08,0,0,0-3.43.3c-.57.1-1.16.19-1.72.31l-.84.19-.39.08c-.09,0-.29.08-.22,0Z",
+    fill: colors.outline
+  }));
+};
 
 var Lips = function Lips(_ref) {
   var lipColor = _ref.lipColor;
@@ -1218,6 +1638,122 @@ var HappyEyes = function HappyEyes() {
   }));
 };
 
+var RightLash = function RightLash() {
+  var _useTheme = useTheme(),
+      colors = _useTheme.colors;
+
+  return React.createElement(Path, {
+    d: "M721.21,500.43c7.82-6.25,14.69-21.65,12.5-20-15.72,12.14-28,10-30.28,9.19-61.66-16.6-100.28,14-72.48,9,32.73-11.48,76.32-2.8,89.38,17.44,12.5-2.88,27.76-11.11,33.4-26.94C734.42,500.22,732.56,500.21,721.21,500.43Z",
+    fill: colors.outline,
+    fillRule: "evenodd"
+  });
+};
+var LeftLash = function LeftLash() {
+  var _useTheme2 = useTheme(),
+      colors = _useTheme2.colors;
+
+  return React.createElement(Path, {
+    d: "M243.89,489.13c5.64,15.83,20.9,24.06,33.4,26.94,13.06-20.24,56.65-28.92,89.37-17.44,27.8,5-10.81-25.57-72.47-9-2.31.85-14.56,2.95-30.28-9.19-2.19-1.69,4.68,13.71,12.5,20C265.06,500.21,263.2,500.22,243.89,489.13Z",
+    fill: colors.outline,
+    fillRule: "evenodd"
+  });
+};
+
+var NormalEyes = function NormalEyes(_ref) {
+  var withLashes = _ref.withLashes;
+
+  var _useTheme = useTheme(),
+      skin = _useTheme.skin,
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M271.4,568.53c-1-28.36,18-52.36,43.28-63.56a62.37,62.37,0,0,1,8.16-2.7A70,70,0,0,1,365.05,505a71.67,71.67,0,0,1,8.93,4.16c29.53,15.89,42.79,53.25,31.36,83.46a61.68,61.68,0,0,1-4.18,8.82,54.68,54.68,0,0,1-17.51,20.83,69.25,69.25,0,0,1-7.85,5c-27.38,13-64.38,9-86.45-11.4a68.39,68.39,0,0,1-6.11-7.47,64.89,64.89,0,0,1-5.57-9.5A55.78,55.78,0,0,1,272,577.1,75.67,75.67,0,0,1,271.4,568.53Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M269.77,550.18c-1-28.36,18-52.36,43.28-63.56a62.23,62.23,0,0,1,8.15-2.7,70,70,0,0,1,42.22,2.68,71.54,71.54,0,0,1,8.92,4.16c29.53,15.89,42.79,53.26,31.36,83.46a59.6,59.6,0,0,1-4.18,8.82,63.85,63.85,0,0,1-4.71,7.8,64.78,64.78,0,0,1-5.68,7,63.08,63.08,0,0,1-7.12,6.07,68.37,68.37,0,0,1-7.85,5c-27.38,13-64.38,9-86.44-11.39a68.28,68.28,0,0,1-6.11-7.48,65,65,0,0,1-5.58-9.5,55.59,55.59,0,0,1-5.71-21.73A71.3,71.3,0,0,1,269.77,550.18Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Circle, {
+    cx: "338.51",
+    cy: "550.79",
+    r: "12.24",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M583.89,560.47c.43-15.13,6.67-30.09,15.1-41.33a72.82,72.82,0,0,1,7.12-8.53,69.73,69.73,0,0,1,90.17-8.95,73.27,73.27,0,0,1,6.53,5.13c27,21.45,30.12,63.14,15.32,93.23a62.31,62.31,0,0,1-4.78,6.86,72.09,72.09,0,0,1-7.58,8.13c-20.27,17.83-51.81,22.13-77.41,12.42a71.34,71.34,0,0,1-10.55-5c-17.9-10.78-30.37-31.09-33.43-52.23A62.93,62.93,0,0,1,583.89,560.47Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M589.38,549c.42-14.15,6.42-28.15,14.52-38.66a70.56,70.56,0,0,1,6.86-8A68.55,68.55,0,0,1,697.53,494a69.81,69.81,0,0,1,6.28,4.79c26,20.07,29,59.07,14.74,87.22a56.5,56.5,0,0,1-4.6,6.42,68.91,68.91,0,0,1-7.29,7.6c-19.51,16.68-49.86,20.71-74.49,11.62A68.79,68.79,0,0,1,622,606.9c-17.22-10.08-29.22-29.08-32.17-48.85A56.34,56.34,0,0,1,589.38,549Z",
+    fill: colors.white,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Circle, {
+    cx: "659.21",
+    cy: "550.79",
+    r: "12.24",
+    fill: colors.outline
+  }), withLashes && React.createElement(G, {
+    transform: "translate(0 -5)"
+  }, React.createElement(LeftLash, null), React.createElement(RightLash, null)));
+};
+
+var LeftTwitchEyes = function LeftTwitchEyes(_ref) {
+  var withLashes = _ref.withLashes;
+
+  var _useTheme = useTheme(),
+      skin = _useTheme.skin,
+      colors = _useTheme.colors;
+
+  return React.createElement(React.Fragment, null, React.createElement(Path, {
+    d: "M271.4,568.53c-1-28.36,18-52.36,43.28-63.56a62.37,62.37,0,0,1,8.16-2.7A70,70,0,0,1,365.05,505a71.67,71.67,0,0,1,8.93,4.16c29.53,15.89,42.79,53.25,31.36,83.46a61.68,61.68,0,0,1-4.18,8.82,54.68,54.68,0,0,1-17.51,20.83,69.25,69.25,0,0,1-7.85,5c-27.38,13-64.38,9-86.45-11.4a68.39,68.39,0,0,1-6.11-7.47,64.89,64.89,0,0,1-5.57-9.5A55.78,55.78,0,0,1,272,577.1,75.67,75.67,0,0,1,271.4,568.53Z",
+    fill: skin.shadow
+  }), React.createElement(Path, {
+    d: "M269.77,550.18c-1-28.36,18-52.36,43.28-63.56a62.23,62.23,0,0,1,8.15-2.7,70,70,0,0,1,42.22,2.68,71.54,71.54,0,0,1,8.92,4.16c29.53,15.89,42.79,53.26,31.36,83.46a59.6,59.6,0,0,1-4.18,8.82,63.85,63.85,0,0,1-4.71,7.8,64.78,64.78,0,0,1-5.68,7,63.08,63.08,0,0,1-7.12,6.07,68.37,68.37,0,0,1-7.85,5c-27.38,13-64.38,9-86.44-11.39a68.28,68.28,0,0,1-6.11-7.48,65,65,0,0,1-5.58-9.5,55.59,55.59,0,0,1-5.71-21.73A71.3,71.3,0,0,1,269.77,550.18Z",
+    fill: colors.white
+  }), React.createElement(Circle, {
+    cx: "338.51",
+    cy: "541.79",
+    r: "12.24",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M399.52,583a59.6,59.6,0,0,0,4.18-8.82,62.5,62.5,0,0,0,2.57-8.64c-68.32-7.75-127,20.81-127,20.81l1.1,1.75c.41.62.82,1.24,1.25,1.84a68.28,68.28,0,0,0,6.11,7.48c22.06,20.36,59.06,24.36,86.44,11.39a68.37,68.37,0,0,0,7.85-5,63.08,63.08,0,0,0,7.12-6.07,64.78,64.78,0,0,0,5.68-7A63.85,63.85,0,0,0,399.52,583Z",
+    fill: skin.base,
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    strokeWidth: "6px"
+  }), React.createElement(Path, {
+    d: "M269.77,550.18c-1-28.36,18-52.36,43.28-63.56a62.23,62.23,0,0,1,8.15-2.7,70,70,0,0,1,42.22,2.68,71.54,71.54,0,0,1,8.92,4.16c29.53,15.89,42.79,53.26,31.36,83.46a59.6,59.6,0,0,1-4.18,8.82,63.85,63.85,0,0,1-4.71,7.8,64.78,64.78,0,0,1-5.68,7,63.08,63.08,0,0,1-7.12,6.07,68.37,68.37,0,0,1-7.85,5c-27.38,13-64.38,9-86.44-11.39a68.28,68.28,0,0,1-6.11-7.48,65,65,0,0,1-5.58-9.5,55.59,55.59,0,0,1-5.71-21.73A71.3,71.3,0,0,1,269.77,550.18Z",
+    stroke: colors.outline,
+    strokeMiterlimit: 10,
+    fill: "none",
+    strokeWidth: "12px"
+  }), React.createElement(Path, {
+    d: "M583.89,560.47c.43-15.13,6.67-30.09,15.1-41.33a72.82,72.82,0,0,1,7.12-8.53,69.73,69.73,0,0,1,90.17-8.95,73.27,73.27,0,0,1,6.53,5.13c27,21.45,30.12,63.14,15.32,93.23a62.31,62.31,0,0,1-4.78,6.86,72.09,72.09,0,0,1-7.58,8.13c-20.27,17.83-51.81,22.13-77.41,12.42a71.34,71.34,0,0,1-10.55-5c-17.9-10.78-30.37-31.09-33.43-52.23A62.93,62.93,0,0,1,583.89,560.47Z",
+    fill: skin.base
+  }), React.createElement(Path, {
+    d: "M589.38,549c.42-14.15,6.42-28.15,14.52-38.66a70.56,70.56,0,0,1,6.86-8A68.55,68.55,0,0,1,697.53,494a69.81,69.81,0,0,1,6.28,4.79c26,20.07,29,59.07,14.74,87.22a56.5,56.5,0,0,1-4.6,6.42,68.91,68.91,0,0,1-7.29,7.6c-19.51,16.68-49.86,20.71-74.49,11.62A68.79,68.79,0,0,1,622,606.9c-17.22-10.08-29.22-29.08-32.17-48.85A56.34,56.34,0,0,1,589.38,549Z",
+    stroke: colors.outline,
+    fill: colors.white,
+    strokeMiterlimit: 10,
+    strokeWidth: "12px"
+  }), React.createElement(Circle, {
+    cx: "659.21",
+    cy: "550.79",
+    r: "12.24",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M718.86,618.11c-10.23,5-20.32,9.55-31.34,12.69a97.34,97.34,0,0,1-16.46,3.3,141.1,141.1,0,0,1-17.69.3A144.2,144.2,0,0,1,633,632.48c-1.93-.31-4.13.51-4.62,2.62-.41,1.81.55,4.28,2.62,4.62a164.26,164.26,0,0,0,19.66,2.1c3.19.13,6.37.06,9.56.16a78.25,78.25,0,0,0,9.06-.21c12-1,23.62-4.28,34.76-8.76,6.32-2.55,12.52-5.4,18.63-8.42a3.77,3.77,0,0,0,1.34-5.13,3.83,3.83,0,0,0-5.13-1.35Z",
+    fill: colors.outline
+  }), React.createElement(Path, {
+    d: "M365.31,627.42c-11.37,2.16-22.4,3.8-34.06,3.83a95.68,95.68,0,0,1-17-1.36,171.78,171.78,0,0,1-35.56-11.64,3.85,3.85,0,0,0-5.13,1.35c-.95,1.62-.5,4.27,1.34,5.13a164.42,164.42,0,0,0,17.87,7.1c2.91,1,5.87,1.7,8.78,2.6a91.22,91.22,0,0,0,8.91,2.35c11.95,2.42,24.22,2.37,36.31,1,6.88-.76,13.71-1.88,20.51-3.17,2-.37,3.12-2.77,2.62-4.61a3.83,3.83,0,0,0-4.62-2.62Z",
+    fill: colors.outline
+  }), withLashes && React.createElement(G, {
+    transform: "translate(0 -5)"
+  }, React.createElement(LeftLash, null), React.createElement(RightLash, null)));
+};
+
 var Shirt = function Shirt(_ref) {
   var color = _ref.color,
       _ref$graphic = _ref.graphic,
@@ -1525,7 +2061,7 @@ var RedwoodGraphic = function RedwoodGraphic() {
   }), React.createElement(Path, {
     d: "M490.59,859c-4.7,2.37-14.62,7-20,10.65s-4.7,7.1-7.05,9.47-9.4,8.28-14.1,11.83-3.53,13-4.7,16.56-3.53,11.83-4.71,15.38,2.35,8.28,4.71,13,8.22,17.74,10.57,22.48,9.41,2.36,15.28,7.09a206.67,206.67,0,0,0,20,14.2c5.87,3.55,8.23,3.55,14.1,0a205.35,205.35,0,0,0,20-14.2c5.88-4.73,12.93-2.36,15.29-7.09s8.22-17.75,10.57-22.48,5.88-9.47,4.71-13-3.53-11.83-4.71-15.38,0-13-4.7-16.56a174,174,0,0,1-14.1-11.83c-4-3.77-2.35-5.92-7.06-9.47s-15.28-8.28-20-10.65A14.93,14.93,0,0,0,490.59,859Z",
     fillRule: "evenodd",
-    fill: colors$1.white
+    fill: colors.white
   }), React.createElement(Path, {
     d: "M474,879.46l22,15a3.14,3.14,0,0,0,1.68.52,3,3,0,0,0,1.67-.52l22-15.07a3,3,0,0,0-.41-5.13l-22-10.9a3.05,3.05,0,0,0-2.64,0l-21.94,10.9a3,3,0,0,0-.36,5.18Zm31.14,19.73a3,3,0,0,0,1.3,2.49l17.64,12.06a3,3,0,0,0,3.66-.24l14.79-13.23a3,3,0,0,0-.13-4.6l-14.12-11.29a3,3,0,0,0-3.55-.14l-18.29,12.51A3,3,0,0,0,505.13,899.19Zm-43.87,16.4a3,3,0,0,1,1,2.54,3,3,0,0,1-1.49,2.29l-10.53,6.31a3,3,0,0,1-3.39-.23,3,3,0,0,1-1-3.27l3.9-12.25a3,3,0,0,1,2.05-2,2.92,2.92,0,0,1,2.78.66Zm57.13,1.28-19.05-13a3,3,0,0,0-3.34,0l-19,13a3,3,0,0,0-1.3,2.29,3.13,3.13,0,0,0,1,2.46l19,17a2.94,2.94,0,0,0,2,.75,3,3,0,0,0,2-.75l19-17a3,3,0,0,0,1-2.46A3,3,0,0,0,518.39,916.87ZM467.6,913.5l-14.78-13.23a3.07,3.07,0,0,1-1-2.37,3,3,0,0,1,1.12-2.28l14.12-11.36a3,3,0,0,1,3.57-.13l18.27,12.5a3.05,3.05,0,0,1,1.36,2.53,3,3,0,0,1-1.36,2.52l-17.62,12.06A3,3,0,0,1,467.6,913.5Zm75.88,19-15.05-9a3,3,0,0,0-3.51.34l-18.39,16.41a3,3,0,0,0,.87,5l25.51,10.34a3,3,0,0,0,3.85-1.57l7.9-17.71A3,3,0,0,0,543.48,932.51ZM545.57,911l3.89,12.25h0a3,3,0,0,1-2.86,3.93,2.91,2.91,0,0,1-1.52-.43l-10.55-6.31a2.93,2.93,0,0,1-1.44-2.29,3,3,0,0,1,1-2.54l6.69-6a3,3,0,0,1,2.77-.66A3,3,0,0,1,545.57,911Zm-55.8,32a3,3,0,0,0-1-2.76l-18.39-16.41a3,3,0,0,0-3.51-.34l-15,9a3.05,3.05,0,0,0-1.2,3.84l7.92,17.71a3,3,0,0,0,3.84,1.56l25.5-10.33A3,3,0,0,0,489.77,943Zm9,5,20.46,8.29a3,3,0,0,1,.54,5.27l-20.48,14.22a2.94,2.94,0,0,1-1.67.54,3,3,0,0,1-1.67-.54l-20.46-14.22a3,3,0,0,1,.58-5.27l20.46-8.29A3.09,3.09,0,0,1,498.79,948.06Z",
     fill: "#c04927",
@@ -1615,27 +2151,6 @@ var Dress = {
   Front: Front$c,
   Back: Back$c,
   braStraps: braStraps
-};
-
-var RightLash = function RightLash() {
-  var _useTheme = useTheme(),
-      colors = _useTheme.colors;
-
-  return React.createElement(Path, {
-    d: "M721.21,500.43c7.82-6.25,14.69-21.65,12.5-20-15.72,12.14-28,10-30.28,9.19-61.66-16.6-100.28,14-72.48,9,32.73-11.48,76.32-2.8,89.38,17.44,12.5-2.88,27.76-11.11,33.4-26.94C734.42,500.22,732.56,500.21,721.21,500.43Z",
-    fill: colors.outline,
-    fillRule: "evenodd"
-  });
-};
-var LeftLash = function LeftLash() {
-  var _useTheme2 = useTheme(),
-      colors = _useTheme2.colors;
-
-  return React.createElement(Path, {
-    d: "M243.89,489.13c5.64,15.83,20.9,24.06,33.4,26.94,13.06-20.24,56.65-28.92,89.37-17.44,27.8,5-10.81-25.57-72.47-9-2.31.85-14.56,2.95-30.28-9.19-2.19-1.69,4.68,13.71,12.5,20C265.06,500.21,263.2,500.22,243.89,489.13Z",
-    fill: colors.outline,
-    fillRule: "evenodd"
-  });
 };
 
 var SquintEyes = function SquintEyes(_ref) {
@@ -2255,154 +2770,6 @@ var Tongue = function Tongue() {
     strokeWidth: "8px"
   }), React.createElement(Path, {
     d: "M479.31,626.6l.91-.21.76-.14c.49-.08,1-.14,1.46-.18a21.42,21.42,0,0,1,2.89-.1,25,25,0,0,1,5.79.81,21.39,21.39,0,0,1,10.34,6.11A20.07,20.07,0,0,1,506.54,643a17.19,17.19,0,0,1-1.37,10.35c-2.08-2.93-3.66-5.55-5.32-7.76a27.26,27.26,0,0,0-2.46-3,14.09,14.09,0,0,0-2.69-2.16,15.31,15.31,0,0,0-6.11-2.08,25.67,25.67,0,0,0-3.43-.22c-.59,0-1.18,0-1.76,0l-.85.06-.4,0c-.09,0-.29,0-.22,0Z",
-    fill: colors.outline
-  }));
-};
-
-var DressShirt = function DressShirt(_ref) {
-  var color = _ref.color,
-      _ref$graphic = _ref.graphic,
-      Graphic = _ref$graphic === void 0 ? Noop : _ref$graphic;
-
-  var _useTheme = useTheme(),
-      colors = _useTheme.colors,
-      skin = _useTheme.skin;
-
-  var base = colors.clothing[color].base;
-  return React.createElement(React.Fragment, null, React.createElement(Polygon, {
-    points: "547.85 847.98 505.72 813.61 580.35 758.82 419.65 758.82 494.28 813.61 452.15 847.98 414.52 791.48 414.52 869.96 588.78 869.96 588.78 786.52 547.85 847.98",
-    fill: skin.shadow
-  }), React.createElement(Path, {
-    d: "M616.66,758.16l-42.73.1a119.49,119.49,0,0,1-1.43,13.48,63.7,63.7,0,0,1-1.74,6.34c-2.34,6.49-17.26,12-21.49,16.73a48.22,48.22,0,0,1-4.5,4.43c-25.17,18.2-65.17,19.2-89.48-.58a51.36,51.36,0,0,1-7.11-7.61c-4.23-5.56-16.4-11.59-18.1-18.94a60,60,0,0,1-1.08-6.59,63.55,63.55,0,0,1-.36-6.8s-45.21-.56-45.21-.56a13.28,13.28,0,0,0-13.28,13.27v284.69a13.28,13.28,0,0,0,13.28,13.27H622.36a13.27,13.27,0,0,0,13.27-13.27V778C635.63,765.82,629.75,758.16,616.66,758.16Z",
-    fill: colors.white
-  }), React.createElement(Path, {
-    d: "M612.84,758.16c63.54,0,88.52,43.39,78.9,272-18.74,6.7-55.91,4.59-55.91,4.59Z",
-    fill: colors.white
-  }), React.createElement(Polygon, {
-    points: "451.06 855.4 499.51 831.31 548.09 855.4 511.03 812.38 467.14 813.21 451.06 855.4",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M635.63,831.31s-22.79,84.54-19.31,234l33.21-31,3.58-137.58C647.49,824.5,635.63,831.31,635.63,831.31Z",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M389,758.16c-61.78,0-88.88,56.45-80.75,245.48,22.42,9.91,56.19,5.58,56.19,5.58Z",
-    fill: colors.white
-  }), React.createElement(Path, {
-    d: "M306.94,957.49q.26,20.46,1.21,43.48c15.27.73,43.69.88,57.11,0l4.18-42.81C358.67,956.9,323.66,956.49,306.94,957.49Z",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M370.12,831.31l-.5,177.69-13.35.9C353.3,860.85,370.12,831.31,370.12,831.31Z",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M612.84,758.16c67.42,0,78.45,56.28,78.9,133.78v138.22s-50,5.53-55.91,4.59l-.1-142.11",
-    fill: "none",
-    stroke: colors.outline,
-    strokeLinecap: "square",
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M389,758.16c-25.73,0-43.52,8.12-55.71,22.44-19.45,22.87-24.63,61.54-25,108.27v123.77c12.06,3.32,61.36-3.64,61.36-3.64l.49-118.6",
-    fill: "none",
-    stroke: colors.outline,
-    strokeLinecap: "square",
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M372.6,1011.24c-1.83,2.61-73.77,1.92-74.67,0s-2.19-37.5,0-41c1.8-2.88,72.11-2.27,74.67,0S374.43,1008.63,372.6,1011.24Z",
-    fill: colors.white,
-    stroke: colors.outline,
-    strokeLinecap: "square",
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M383.43,1069.39H500c-109.19,0-100.91-231.14-129.89-231.14v217.87A13.28,13.28,0,0,0,383.43,1069.39Z",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M364.15,860.29c-.19-3.67-.11-7.35.06-11s.47-7.34.85-11c.2-1.83.41-3.67.65-5.51s.49-3.67.85-5.5a44.05,44.05,0,0,1,3.59-11,44.05,44.05,0,0,1,3.59,11c.36,1.83.62,3.67.85,5.5s.45,3.68.65,5.51q.58,5.52.86,11c.16,3.67.24,7.35,0,11Z",
-    fill: colors.outline
-  }), React.createElement(Path, {
-    d: "M635.63,869.4v8c.26,34,.26,69,0,102.76,0,2.87,0,5.72,0,8.53v67.41a13.27,13.27,0,0,1-13.27,13.27H383.43a13.28,13.28,0,0,1-13.28-13.27V990.3c-.26-34.86-.26-69.86,0-105.3V860.29",
-    fill: "none",
-    stroke: colors.outline,
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M697.42,970.24c2.22,2.26,1.59,38.39,0,41s-64,1.92-64.77,0-1.9-37.5,0-41c.27-.5,2.28-.89,5.45-1.18",
-    fill: colors.white,
-    stroke: colors.outline,
-    strokeLinecap: "square",
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M678.92,968.3c3.8.3,15-1.18,15.42-.76",
-    fill: colors.white
-  }), React.createElement(Path, {
-    d: "M678.92,968.3a23.67,23.67,0,0,1,1.88-2.16,12.13,12.13,0,0,1,1.78-1.47,12.74,12.74,0,0,1,1.81-1c.61-.29,1.22-.54,1.83-.79a24.1,24.1,0,0,1,3.79-1.18,15.85,15.85,0,0,1,2-.31c.36,0,.73,0,1.17,0,.25,0,.46,0,.82,0,.12,0,.44,0,.71.07l.35,0,.49.11.25.06.2.06.57.21a6.45,6.45,0,0,1,2,1.37l4.2,4.29-8.65,8.48-4.12-4.37a5.73,5.73,0,0,0,1.91,1.32c.18.08.36.14.54.2l.17,0,.19.05a2.34,2.34,0,0,0,.38.09l.19,0h0c.1,0,.26,0,.22,0s-.07,0-.15,0l-.75,0c-.57,0-1.19,0-1.82,0a26.27,26.27,0,0,1-3.92-.53c-.67-.15-1.34-.3-2-.49a12.56,12.56,0,0,1-2-.72,10,10,0,0,1-2.08-1.32A8.19,8.19,0,0,1,678.92,968.3Z",
-    fill: colors.outline
-  }), React.createElement(Polygon, {
-    points: "592.51 763.64 517.84 818.45 559.98 852.83 619.4 763.59 592.51 763.64",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Path, {
-    d: "M629.63,869.4c-.19-4.18-.1-8.36.06-12.53s.47-8.36.86-12.53c.2-2.09.4-4.18.64-6.27s.49-4.18.86-6.27a54.83,54.83,0,0,1,3.58-12.53,54.37,54.37,0,0,1,3.59,12.53c.36,2.09.63,4.18.85,6.27s.45,4.18.65,6.27c.39,4.17.69,8.35.85,12.53s.26,8.35.06,12.53Z",
-    fill: colors.outline
-  }), React.createElement(Path, {
-    d: "M383.43,758.26l233.23-.1",
-    fill: "none",
-    stroke: colors.outline,
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Polygon, {
-    points: "529.39 835.55 507.04 813.21 484.7 835.55 495.68 846.53 485.96 953.16 506.7 969.33 528.12 953.16 518.41 846.53 529.39 835.55",
-    fill: colors.clothing.white.shadow
-  }), React.createElement(Line, {
-    x1: "500.04",
-    y1: "813.21",
-    x2: "500.04",
-    y2: "1069.39",
-    fill: "none",
-    stroke: colors.outline,
-    strokeLinecap: "square",
-    strokeMiterlimit: 10,
-    strokeWidth: "6px"
-  }), React.createElement(Polygon, {
-    points: "500.04 813.21 522.39 828.55 500.04 850.9 477.7 828.55 500.04 813.21",
-    fill: base
-  }), React.createElement(Path, {
-    d: "M419.62,758.8s43.27,39.34,74.66,54.81C479,838.82,452.15,848,452.15,848l-59.43-89.23Z",
-    fill: colors.white,
-    stroke: colors.outline,
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(Path, {
-    d: "M580.38,758.8S541,800,505.72,813.61c10,20.28,42.13,34.37,42.13,34.37l59.43-89.23Z",
-    fill: colors.white,
-    stroke: colors.outline,
-    strokeMiterlimit: 10,
-    strokeWidth: "12px"
-  }), React.createElement(G, {
-    transform: "translate(0 30)"
-  }, React.createElement(Graphic, null)), React.createElement(Polygon, {
-    points: "478.96 946.16 499.7 962.33 521.12 946.16 511.12 836.38 488.96 836.38 478.96 946.16",
-    fill: base
-  }), React.createElement(Polyline, {
-    points: "477.7 828.55 488.68 839.53 478.96 946.16 499.7 962.33 521.12 946.16 511.41 839.53 522.39 828.55",
-    fill: "none",
-    stroke: colors.outline,
-    strokeMiterlimit: 10,
-    strokeWidth: "8px"
-  }), React.createElement(Path, {
-    d: "M638.1,969.06c7.51-.71,21.51-.89,34-.67",
-    fill: colors.white
-  }), React.createElement(Path, {
-    d: "M637.54,963.08a50.92,50.92,0,0,1,8.84-.47c2.9.07,5.78.3,8.66.65,1.43.18,2.87.37,4.3.61a43.36,43.36,0,0,1,4.29.85,27.53,27.53,0,0,1,8.5,3.67,30.13,30.13,0,0,1-8.52,3.5c-1.41.36-2.82.63-4.23.86s-2.81.47-4.21.69c-2.8.42-5.59.78-8.35,1s-5.52.5-8.16.54l-6,.1-1-11.13Z",
-    fill: colors.outline
-  }), React.createElement(Circle, {
-    cx: "515.77",
-    cy: "982.93",
-    r: "4.8",
-    fill: colors.outline
-  }), React.createElement(Path, {
-    d: "M490.89,836.19c-.05-.06,0,0,0,0l.07.05a.88.88,0,0,1,.17.12l.38.29c.25.21.52.42.78.65.53.45,1.09.93,1.7,1.39s1.27.9,2,1.42a27.37,27.37,0,0,1,2.71,2.33,5.61,5.61,0,0,1-3.13,2.43,9.41,9.41,0,0,1-3.7.27,11,11,0,0,1-3.63-1,9.72,9.72,0,0,1-1.65-1,8.85,8.85,0,0,1-.77-.63c-.12-.11-.25-.23-.37-.36l-.2-.21-.25-.29Z",
     fill: colors.outline
   }));
 };
@@ -4612,7 +4979,7 @@ function selectRandomKey(object) {
 
 var Avatar = function Avatar(_ref) {
   var _ref$skinTone = _ref.skinTone,
-      skinTone = _ref$skinTone === void 0 ? selectRandomKey(colors$1.skin) : _ref$skinTone,
+      skinTone = _ref$skinTone === void 0 ? selectRandomKey(colors.skin) : _ref$skinTone,
       _ref$eyes = _ref.eyes,
       eyes = _ref$eyes === void 0 ? selectRandomKey(eyesMap) : _ref$eyes,
       _ref$eyebrows = _ref.eyebrows,
@@ -4634,17 +5001,17 @@ var Avatar = function Avatar(_ref) {
       _ref$body = _ref.body,
       body = _ref$body === void 0 ? selectRandomKey(bodyMap) : _ref$body,
       _ref$hairColor = _ref.hairColor,
-      hairColor = _ref$hairColor === void 0 ? selectRandomKey(colors$1.hair) : _ref$hairColor,
+      hairColor = _ref$hairColor === void 0 ? selectRandomKey(colors.hair) : _ref$hairColor,
       _ref$clothingColor = _ref.clothingColor,
-      clothingColor = _ref$clothingColor === void 0 ? selectRandomKey(colors$1.clothing) : _ref$clothingColor,
+      clothingColor = _ref$clothingColor === void 0 ? selectRandomKey(colors.clothing) : _ref$clothingColor,
       _ref$bgShape = _ref.bgShape,
       bgShape = _ref$bgShape === void 0 ? selectRandomKey(bgShapeMap) : _ref$bgShape,
       _ref$bgColor = _ref.bgColor,
-      bgColor = _ref$bgColor === void 0 ? selectRandomKey(colors$1.bgColors) : _ref$bgColor,
+      bgColor = _ref$bgColor === void 0 ? selectRandomKey(colors.bgColors) : _ref$bgColor,
       _ref$lipColor = _ref.lipColor,
-      lipColor = _ref$lipColor === void 0 ? selectRandomKey(colors$1.lipColors) : _ref$lipColor,
+      lipColor = _ref$lipColor === void 0 ? selectRandomKey(colors.lipColors) : _ref$lipColor,
       _ref$hatColor = _ref.hatColor,
-      hatColor = _ref$hatColor === void 0 ? selectRandomKey(colors$1.clothing) : _ref$hatColor,
+      hatColor = _ref$hatColor === void 0 ? selectRandomKey(colors.clothing) : _ref$hatColor,
       _ref$showBackground = _ref.showBackground,
       showBackground = _ref$showBackground === void 0 ? true : _ref$showBackground,
       _ref$lashes = _ref.lashes,
@@ -4658,7 +5025,7 @@ var Avatar = function Avatar(_ref) {
       svgRef = _ref.svgRef,
       rest = _objectWithoutPropertiesLoose(_ref, ["skinTone", "eyes", "eyebrows", "mouth", "hair", "facialHair", "clothing", "accessory", "graphic", "hat", "body", "hairColor", "clothingColor", "bgShape", "bgColor", "lipColor", "hatColor", "showBackground", "lashes", "size", "containerStyles", "containerProps", "svgRef"]);
 
-  var skin = colors$1.skin[skinTone];
+  var skin = colors.skin[skinTone];
   var Eyes = eyesMap[eyes];
   var Eyebrows = eyebrowsMap[eyebrows];
   var Mouth = mouthsMap[mouth];
@@ -4672,7 +5039,7 @@ var Avatar = function Avatar(_ref) {
   var BgShape = bgShapeMap[bgShape];
   return React.createElement(ThemeContext.Provider, {
     value: {
-      colors: colors$1,
+      colors: colors,
       skin: skin
     }
   }, React.createElement(Base, Object.assign({

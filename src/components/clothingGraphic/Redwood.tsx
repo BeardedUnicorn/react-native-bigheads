@@ -1,5 +1,5 @@
 import React from 'react'
-import { colors } from 'theme'
+import { colors } from '../../theme'
 import { Rect, Path } from 'react-native-svg'
 
 export const RedwoodGraphic = () => {

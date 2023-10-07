@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from 'theme';
+import { colors } from '../theme';
 import { FacialHairProps } from './facialHair/types';
 import { HairProps } from './hair/types';
 import { ClothingProps } from './clothing/types';

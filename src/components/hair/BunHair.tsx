@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from 'themeContext'
+import { useTheme } from '../../themeContext'
 import { HairProps } from './types'
 import { Path, Circle } from 'react-native-svg'
 
